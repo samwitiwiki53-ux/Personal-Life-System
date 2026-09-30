@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lifesystem.controllers.LoginController"
+      alignment="CENTER"
+      spacing="20"
+      style="-fx-background-color: #1C4E80; -fx-padding: 60;">
+
+    <Label text="Personal Life Management System"
+           style="-fx-font-size: 24; -fx-font-weight: bold;
+                  -fx-text-fill: white;"/>
+
+    <Label text="Please log in to continue"
+           style="-fx-font-size: 14; -fx-text-fill: #AACCEE;"/>
+
+    <TextField fx:id="txtUsername"
+               promptText="Username"
+               maxWidth="300"
+               style="-fx-font-size: 14; -fx-padding: 10;"/>
+
+    <PasswordField fx:id="txtPassword"
+                   promptText="Password"
+                   maxWidth="300"
+                   style="-fx-font-size: 14; -fx-padding: 10;"/>
+
+    <Button fx:id="btnLogin"
+            text="Login"
+            maxWidth="300"
+            onAction="#handleLogin"
+            style="-fx-background-color: #27AE60;
+                   -fx-text-fill: white;
+                   -fx-font-size: 14;
+                   -fx-font-weight: bold;
+                   -fx-padding: 10 20;
+                   -fx-cursor: hand;"/>
+
+    <Label fx:id="lblError"
+           style="-fx-text-fill: #E74C3C; -fx-font-size: 12;"/>
+
+</VBox>
