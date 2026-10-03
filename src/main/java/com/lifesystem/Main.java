@@ -1,28 +1,22 @@
 package com.lifesystem;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import com.lifesystem.database.MongoDBHelper;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(
-            getClass().getResource("/fxml/login.fxml"));
-        primaryStage.setTitle(
-            "Personal Life Management System");
-        primaryStage.setScene(new Scene(root, 900, 600));
-        primaryStage.setResizable(false);
-        primaryStage.show();
-    }
+    public void start(Stage stage) {
+        Label title = new Label("Personal Life System");
+        StackPane root = new StackPane(title);
 
-    @Override
-    public void stop() {
-        MongoDBHelper.closeConnection();
+        Scene scene = new Scene(root, 900, 600);
+        stage.setTitle("Personal Life System");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
