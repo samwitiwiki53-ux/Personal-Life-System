@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lifesystem.controllers.AddTenantController"
+      spacing="0"
+      style="-fx-background-color: #F0F4F8;">
+
+    <!-- Header -->
+    <HBox style="-fx-background-color: #1C4E80;
+                 -fx-padding: 14 20;"
+          alignment="CENTER_LEFT">
+        <Label fx:id="lblTitle"
+               text="➕  Add New Tenant"
+               style="-fx-font-size: 16;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Form Body -->
+    <ScrollPane fitToWidth="true"
+                VBox.vgrow="ALWAYS"
+                style="-fx-background-color: #F0F4F8;">
+        <VBox spacing="12"
+              style="-fx-padding: 20;">
+
+            <GridPane hgap="12" vgap="12">
+
+                <!-- First Name -->
+                <Label text="First Name *"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="0"
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtFirstName"
+                           promptText="Enter first name"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="0"
+                           prefWidth="280"/>
+
+                <!-- Last Name -->
+                <Label text="Last Name *"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="1"
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtLastName"
+                           promptText="Enter last name"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"
+                           prefWidth="280"/>
+
+                <!-- Phone -->
+                <Label text="Phone Number"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="2"
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtPhone"
+                           promptText="e.g. 0700000000"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="2"/>
+
+                <!-- Email -->
+                <Label text="Email Address"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="3"
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtEmail"
+                           promptText="email@example.com"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="3"/>
+
+                <!-- Unit Number -->
+                <Label text="Unit Number *"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="4"
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtUnit"
+                           promptText="e.g. A1, 001"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="4"/>
+
+                <!-- Property Type -->
+                <Label text="Property Type *"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="5"
+                       style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="cboProperty"
+                          prefWidth="280"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="5"/>
+
+                <!-- Monthly Rent -->
+                <Label text="Monthly Rent (UGX) *"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="6"
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtRent"
+                           promptText="e.g. 200000"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="6"/>
+
+                <!-- National ID -->
+                <Label text="National ID"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="7"
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtNationalID"
+                           promptText="National ID number"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="7"/>
+
+                <!-- Lease Start -->
+                <Label text="Lease Start *"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="8"
+                       style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="dpLeaseStart"
+                            prefWidth="280"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="8"/>
+
+                <!-- Lease End -->
+                <Label text="Lease End"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="9"
+                       style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="dpLeaseEnd"
+                            prefWidth="280"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="9"/>
+
+                <!-- Status -->
+                <Label text="Status"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="10"
+                       style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="cboStatus"
+                          prefWidth="280"
+                          GridPane.columnIndex="1"
+                          GridPane.rowIndex="10"/>
+
+            </GridPane>
+
+            <!-- Buttons -->
+            <HBox spacing="12"
+                  alignment="CENTER"
+                  style="-fx-padding: 10 0 0 0;">
+                <Button text="💾  Save Tenant"
+                        onAction="#handleSave"
+                        prefWidth="160"
+                        prefHeight="40"
+                        style="-fx-background-color:
+                               #27AE60;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;
+                               -fx-font-size: 13;
+                               -fx-cursor: hand;"/>
+                <Button text="Cancel"
+                        onAction="#handleCancel"
+                        prefWidth="100"
+                        prefHeight="40"
+                        style="-fx-background-color:
+                               #C0392B;
+                               -fx-text-fill: white;
+                               -fx-font-size: 13;
+                               -fx-cursor: hand;"/>
+            </HBox>
+
+        </VBox>
+    </ScrollPane>
+
+</VBox>

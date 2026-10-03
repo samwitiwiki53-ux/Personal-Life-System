@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lifesystem.controllers.TenantController"
+      spacing="0"
+      style="-fx-background-color: #F0F4F8;">
+
+    <!-- Header -->
+    <HBox style="-fx-background-color: #1C4E80;
+                 -fx-padding: 14 20;"
+          alignment="CENTER_LEFT" spacing="15">
+        <Label text="🏠  Tenant Management"
+               style="-fx-font-size: 18;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: white;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="⬅ Back to Hub"
+                onAction="#goBackToHub"
+                style="-fx-background-color: #2980B9;
+                       -fx-text-fill: white;
+                       -fx-padding: 6 14;
+                       -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- Summary Cards -->
+    <HBox spacing="15"
+          style="-fx-padding: 14 20 10 20;">
+        <VBox style="-fx-background-color: #1C4E80;
+                     -fx-padding: 14;
+                     -fx-background-radius: 8;"
+              spacing="4" minWidth="160">
+            <Label text="TOTAL TENANTS"
+                   style="-fx-font-size: 9;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #AACCEE;"/>
+            <Label fx:id="lblTotalTenants" text="0"
+                   style="-fx-font-size: 22;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+        </VBox>
+        <VBox style="-fx-background-color: #27AE60;
+                     -fx-padding: 14;
+                     -fx-background-radius: 8;"
+              spacing="4" minWidth="200">
+            <Label text="TOTAL COLLECTED"
+                   style="-fx-font-size: 9;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #AADDAA;"/>
+            <Label fx:id="lblTotalCollected" text="UGX 0"
+                   style="-fx-font-size: 18;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+        </VBox>
+    </HBox>
+
+    <!-- Toolbar -->
+    <HBox style="-fx-background-color: white;
+                 -fx-padding: 10 20;"
+          spacing="10" alignment="CENTER_LEFT">
+        <Button text="➕ Add Tenant"
+                onAction="#openAddTenant"
+                style="-fx-background-color: #1C4E80;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-padding: 8 16;
+                       -fx-cursor: hand;"/>
+        <Button text="✏️ Edit Tenant"
+                onAction="#openEditTenant"
+                style="-fx-background-color: #2980B9;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-padding: 8 16;
+                       -fx-cursor: hand;"/>
+        <Button text="💰 Record Payment"
+                onAction="#openRecordPayment"
+                style="-fx-background-color: #27AE60;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-padding: 8 16;
+                       -fx-cursor: hand;"/>
+        <Button text="📋 Payment History"
+                onAction="#openPaymentHistory"
+                style="-fx-background-color: #8E44AD;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-padding: 8 16;
+                       -fx-cursor: hand;"/>
+        <Button text="🔴 Deactivate"
+                onAction="#deactivateTenant"
+                style="-fx-background-color: #C0392B;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-padding: 8 16;
+                       -fx-cursor: hand;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="Search:"
+               style="-fx-font-size: 12;"/>
+        <TextField fx:id="txtSearch"
+                   promptText="Name or unit..."
+                   prefWidth="180"
+                   onKeyReleased="#searchTenants"/>
+    </HBox>
+
+    <!-- Tenants Table -->
+    <TableView fx:id="tblTenants"
+               VBox.vgrow="ALWAYS"
+               style="-fx-background-color: white;
+                      -fx-border-color: #E0E0E0;">
+        <columns>
+            <TableColumn fx:id="colName"
+                         text="Full Name" prefWidth="160"/>
+            <TableColumn fx:id="colUnit"
+                         text="Unit" prefWidth="80"/>
+            <TableColumn fx:id="colProperty"
+                         text="Property Type" prefWidth="160"/>
+            <TableColumn fx:id="colPhone"
+                         text="Phone" prefWidth="130"/>
+            <TableColumn fx:id="colRent"
+                         text="Monthly Rent (UGX)"
+                         prefWidth="150"/>
+            <TableColumn fx:id="colLease"
+                         text="Lease Start" prefWidth="110"/>
+            <TableColumn fx:id="colStatus"
+                         text="Status" prefWidth="90"/>
+        </columns>
+        <placeholder>
+            <Label text="No tenants found.
+Click Add Tenant to register one."
+                   style="-fx-text-fill: #999999;
+                          -fx-font-size: 13;"/>
+        </placeholder>
+    </TableView>
+
+</VBox>

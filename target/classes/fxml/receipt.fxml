@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lifesystem.controllers.ReceiptController"
+      spacing="0"
+      style="-fx-background-color: #F0F4F8;">
+
+    <!-- Top Blue Bar -->
+    <Pane style="-fx-background-color: #1C4E80;"
+          prefHeight="8"/>
+
+    <!-- White Receipt Card -->
+    <VBox style="-fx-background-color: white;
+                 -fx-padding: 25;
+                 -fx-margin: 15;"
+          spacing="6"
+          VBox.vgrow="ALWAYS">
+
+        <!-- Property Header -->
+        <Label text="PERSONAL LIFE MANAGEMENT SYSTEM"
+               style="-fx-font-size: 16;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #1C4E80;"
+               maxWidth="Infinity"
+               alignment="CENTER"/>
+
+        <Separator/>
+
+        <Label text="OFFICIAL PAYMENT RECEIPT"
+               style="-fx-font-size: 14;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #1C4E80;"
+               maxWidth="Infinity"
+               alignment="CENTER"/>
+
+        <Separator/>
+
+        <!-- Receipt Meta -->
+        <GridPane hgap="10" vgap="8"
+                  style="-fx-padding: 8 0;">
+            <Label text="Receipt No:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="0"/>
+            <Label fx:id="lblReceiptNumber"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="0"/>
+
+            <Label text="Date Issued:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="1"/>
+            <Label fx:id="lblIssuedDate"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <Separator/>
+
+        <!-- Tenant Details -->
+        <Label text="TENANT DETAILS"
+               style="-fx-font-size: 10;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #1C4E80;"/>
+
+        <GridPane hgap="10" vgap="8">
+            <Label text="Tenant Name:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="0"/>
+            <Label fx:id="lblTenantName"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="0"/>
+
+            <Label text="Unit Number:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="1"/>
+            <Label fx:id="lblUnitNumber"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="1"/>
+
+            <Label text="Phone:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="2"/>
+            <Label fx:id="lblPhone"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="2"/>
+
+            <Label text="Property Type:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="3"/>
+            <Label fx:id="lblPropertyType"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="3"/>
+        </GridPane>
+
+        <Separator/>
+
+        <!-- Payment Details -->
+        <Label text="PAYMENT DETAILS"
+               style="-fx-font-size: 10;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #1C4E80;"/>
+
+        <GridPane hgap="10" vgap="8">
+            <Label text="Payment Period:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="0"/>
+            <Label fx:id="lblPeriod"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="0"/>
+
+            <Label text="Payment Date:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="1"/>
+            <Label fx:id="lblPaymentDate"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="1"/>
+
+            <Label text="Payment Method:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="2"/>
+            <Label fx:id="lblPaymentMethod"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="2"/>
+
+            <Label text="Monthly Rent:"
+                   style="-fx-font-weight: bold;
+                          -fx-text-fill: #666;"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="3"/>
+            <Label fx:id="lblMonthlyRent"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="3"/>
+        </GridPane>
+
+        <Separator/>
+
+        <!-- Amount Box -->
+        <VBox style="-fx-background-color: #EBF5FB;
+                     -fx-padding: 14;
+                     -fx-background-radius: 6;"
+              alignment="CENTER">
+            <Label fx:id="lblAmountPaid"
+                   text="AMOUNT PAID: UGX 0"
+                   style="-fx-font-size: 18;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #1C4E80;"/>
+        </VBox>
+
+        <!-- Balance -->
+        <Label fx:id="lblBalance"
+               text=""
+               style="-fx-font-size: 13;
+                      -fx-font-weight: bold;"
+               maxWidth="Infinity"
+               alignment="CENTER"/>
+
+        <Separator/>
+
+        <!-- Footer -->
+        <Label text="Thank you for your payment."
+               style="-fx-font-style: italic;
+                      -fx-text-fill: #999;"
+               maxWidth="Infinity"
+               alignment="CENTER"/>
+        <Label text="This is a computer-generated receipt."
+               style="-fx-font-size: 10;
+                      -fx-text-fill: #BBBBBB;"
+               maxWidth="Infinity"
+               alignment="CENTER"/>
+
+    </VBox>
+
+    <!-- Bottom Blue Bar -->
+    <Pane style="-fx-background-color: #1C4E80;"
+          prefHeight="8"/>
+
+    <!-- Action Buttons -->
+    <HBox spacing="12"
+          alignment="CENTER"
+          style="-fx-padding: 12;">
+        <Button text="🖨️  Print Receipt"
+                onAction="#handlePrint"
+                prefWidth="160"
+                prefHeight="38"
+                style="-fx-background-color: #1C4E80;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-cursor: hand;"/>
+        <Button text="Close"
+                onAction="#handleClose"
+                prefWidth="100"
+                prefHeight="38"
+                style="-fx-background-color: #C0392B;
+                       -fx-text-fill: white;
+                       -fx-cursor: hand;"/>
+    </HBox>
+
+</VBox>

@@ -1,6 +1,14 @@
+com\lifesystem\controllers\AddTenantController.class
+com\lifesystem\database\TenantDAO.class
+com\lifesystem\models\Payment.class
+com\lifesystem\database\MongoDBHelper.class
+com\lifesystem\controllers\ReceiptController.class
+com\lifesystem\controllers\TenantController.class
+com\lifesystem\controllers\PaymentHistoryController.class
 com\lifesystem\Main.class
 module-info.class
 com\lifesystem\models\BaseModel.class
-com\lifesystem\database\MongoDBHelper.class
+com\lifesystem\models\Tenant.class
 com\lifesystem\controllers\HubController.class
+com\lifesystem\controllers\RecordPaymentController.class
 com\lifesystem\controllers\LoginController.class
