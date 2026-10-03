@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lifesystem.controllers.HubController"
+      spacing="0"
+      style="-fx-background-color: #F0F4F8;">
+
+    <!-- Header Bar -->
+    <HBox style="-fx-background-color: #1C4E80;
+                 -fx-padding: 15 20;"
+          alignment="CENTER_LEFT" spacing="20">
+
+        <Label text="🏠 Personal Life Management System"
+               style="-fx-font-size: 20;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: white;"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label fx:id="lblWelcome"
+               style="-fx-font-size: 13;
+                      -fx-text-fill: #AACCEE;"/>
+
+        <Button text="Logout"
+                onAction="#handleLogout"
+                style="-fx-background-color: #C0392B;
+                       -fx-text-fill: white;
+                       -fx-font-size: 12;
+                       -fx-padding: 6 14;
+                       -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- Subtitle -->
+    <Label text="Select a module to get started"
+           style="-fx-font-size: 13;
+                  -fx-text-fill: #666666;
+                  -fx-padding: 16 20 8 20;"/>
+
+    <!-- Module Cards Grid -->
+    <GridPane hgap="16" vgap="16"
+              style="-fx-padding: 10 20 20 20;">
+
+        <!-- Row 1 -->
+        <VBox GridPane.columnIndex="0"
+              GridPane.rowIndex="0"
+              style="-fx-background-color: #1C4E80;
+                     -fx-padding: 25;
+                     -fx-background-radius: 10;"
+              spacing="10" alignment="CENTER"
+              minWidth="180" minHeight="140">
+            <Label text="🏠"
+                   style="-fx-font-size: 36;"/>
+            <Label text="Tenant Management"
+                   style="-fx-font-size: 13;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;
+                          -fx-text-alignment: center;"/>
+            <Button text="Open"
+                    onAction="#openTenants"
+                    style="-fx-background-color: white;
+                           -fx-text-fill: #1C4E80;
+                           -fx-font-weight: bold;
+                           -fx-padding: 5 20;
+                           -fx-cursor: hand;"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="1"
+              GridPane.rowIndex="0"
+              style="-fx-background-color: #27AE60;
+                     -fx-padding: 25;
+                     -fx-background-radius: 10;"
+              spacing="10" alignment="CENTER"
+              minWidth="180" minHeight="140">
+            <Label text="💰"
+                   style="-fx-font-size: 36;"/>
+            <Label text="Wealth Management"
+                   style="-fx-font-size: 13;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;
+                          -fx-text-alignment: center;"/>
+            <Button text="Open"
+                    onAction="#openWealth"
+                    style="-fx-background-color: white;
+                           -fx-text-fill: #27AE60;
+                           -fx-font-weight: bold;
+                           -fx-padding: 5 20;
+                           -fx-cursor: hand;"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="2"
+              GridPane.rowIndex="0"
+              style="-fx-background-color: #E67E22;
+                     -fx-padding: 25;
+                     -fx-background-radius: 10;"
+              spacing="10" alignment="CENTER"
+              minWidth="180" minHeight="140">
+            <Label text="🛒"
+                   style="-fx-font-size: 36;"/>
+            <Label text="Shop Management"
+                   style="-fx-font-size: 13;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;
+                          -fx-text-alignment: center;"/>
+            <Button text="Open"
+                    onAction="#openShop"
+                    style="-fx-background-color: white;
+                           -fx-text-fill: #E67E22;
+                           -fx-font-weight: bold;
+                           -fx-padding: 5 20;
+                           -fx-cursor: hand;"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="3"
+              GridPane.rowIndex="0"
+              style="-fx-background-color: #8E44AD;
+                     -fx-padding: 25;
+                     -fx-background-radius: 10;"
+              spacing="10" alignment="CENTER"
+              minWidth="180" minHeight="140">
+            <Label text="🚗"
+                   style="-fx-font-size: 36;"/>
+            <Label text="Vehicle Management"
+                   style="-fx-font-size: 13;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;
+                          -fx-text-alignment: center;"/>
+            <Button text="Open"
+                    onAction="#openVehicles"
+                    style="-fx-background-color: white;
+                           -fx-text-fill: #8E44AD;
+                           -fx-font-weight: bold;
+                           -fx-padding: 5 20;
+                           -fx-cursor: hand;"/>
+        </VBox>
+
+        <!-- Row 2 -->
+        <VBox GridPane.columnIndex="0"
+              GridPane.rowIndex="1"
+              style="-fx-background-color: #16A085;
+                     -fx-padding: 25;
+                     -fx-background-radius: 10;"
+              spacing="10" alignment="CENTER"
+              minWidth="180" minHeight="140">
+            <Label text="🌾"
+                   style="-fx-font-size: 36;"/>
+            <Label text="Farm Management"
+                   style="-fx-font-size: 13;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;
+                          -fx-text-alignment: center;"/>
+            <Button text="Open"
+                    onAction="#openFarm"
+                    style="-fx-background-color: white;
+                           -fx-text-fill: #16A085;
+                           -fx-font-weight: bold;
+                           -fx-padding: 5 20;
+                           -fx-cursor: hand;"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="1"
+              GridPane.rowIndex="1"
+              style="-fx-background-color: #2980B9;
+                     -fx-padding: 25;
+                     -fx-background-radius: 10;"
+              spacing="10" alignment="CENTER"
+              minWidth="180" minHeight="140">
+            <Label text="🎓"
+                   style="-fx-font-size: 36;"/>
+            <Label text="Student Management"
+                   style="-fx-font-size: 13;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;
+                          -fx-text-alignment: center;"/>
+            <Button text="Open"
+                    onAction="#openStudents"
+                    style="-fx-background-color: white;
+                           -fx-text-fill: #2980B9;
+                           -fx-font-weight: bold;
+                           -fx-padding: 5 20;
+                           -fx-cursor: hand;"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="2"
+              GridPane.rowIndex="1"
+              style="-fx-background-color: #C0392B;
+                     -fx-padding: 25;
+                     -fx-background-radius: 10;"
+              spacing="10" alignment="CENTER"
+              minWidth="180" minHeight="140">
+            <Label text="🏥"
+                   style="-fx-font-size: 36;"/>
+            <Label text="Health Management"
+                   style="-fx-font-size: 13;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;
+                          -fx-text-alignment: center;"/>
+            <Button text="Open"
+                    onAction="#openHealth"
+                    style="-fx-background-color: white;
+                           -fx-text-fill: #C0392B;
+                           -fx-font-weight: bold;
+                           -fx-padding: 5 20;
+                           -fx-cursor: hand;"/>
+        </VBox>
+
+    </GridPane>
+
+</VBox>

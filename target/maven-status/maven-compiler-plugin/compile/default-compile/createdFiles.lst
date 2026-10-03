@@ -1,0 +1,6 @@
+com\lifesystem\Main.class
+module-info.class
+com\lifesystem\models\BaseModel.class
+com\lifesystem\database\MongoDBHelper.class
+com\lifesystem\controllers\HubController.class
+com\lifesystem\controllers\LoginController.class
