@@ -1,376 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.*?>
-
-<VBox xmlns:fx="http://javafx.com/fxml"
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/17"
       fx:controller="com.lifesystem.controllers.RecordPaymentController"
-      spacing="0"
+      spacing="15"
       style="-fx-background-color: #F0F4F8;">
-
-    <!-- Header -->
-    <HBox style="-fx-background-color: #27AE60;
-                 -fx-padding: 14 20;"
+    <HBox style="-fx-background-color: #27AE60; -fx-padding: 14 20;"
           alignment="CENTER_LEFT">
-        <Label text="💰  Record Payment"
-               style="-fx-font-size: 16;
-                      -fx-font-weight: bold;
-                      -fx-text-fill: white;"/>
+        <Label text="Record Payment"
+               style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: white;"/>
     </HBox>
-
-    <!-- Tenant Info Bar -->
-    <HBox style="-fx-background-color: #EBF5FB;
-                 -fx-padding: 10 20;
-                 -fx-border-color: #AED6F1;
-                 -fx-border-width: 0 0 1 0;">
-        <Label fx:id="lblTenantName"
-               text="Tenant: "
-               style="-fx-font-size: 12;
-                      -fx-font-weight: bold;
-                      -fx-text-fill: #1C4E80;"/>
+    <HBox style="-fx-background-color: #EBF5FB; -fx-padding: 10 20;">
+        <Label fx:id="lblTenantName" text="Tenant:"
+               style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #1C4E80;"/>
     </HBox>
-
-    <!-- Form -->
-    <VBox spacing="14"
-          style="-fx-padding: 20;">
-
-        <GridPane hgap="15" vgap="14">
-
-            <!-- Amount -->
-            <Label text="Amount Paid (UGX) *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="0"
-                   style="-fx-font-weight: bold;"/>
-            <TextField fx:id="txtAmount"
-                       promptText="e.g. 200000"
-                       prefWidth="250"
-                       GridPane.columnIndex="1"
-                       GridPane.rowIndex="0"/>
-
-            <!-- Payment Date -->
-            <Label text="Payment Date *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="1"
-                   style="-fx-font-weight: bold;"/>
-            <DatePicker fx:id="dpPaymentDate"
-                        prefWidth="250"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="1"/>
-
-            <!-- Payment Method -->
-            <Label text="Payment Method *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="2"
-                   style="-fx-font-weight: bold;"/>
-            <ComboBox fx:id="cboMethod"
-                      prefWidth="250"
-                      GridPane.columnIndex="1"
-                      GridPane.rowIndex="2"/>
-
-            <!-- Month -->
-            <Label text="Payment For (Month) *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="3"
-                   style="-fx-font-weight: bold;"/>
-            <HBox spacing="8"
-                  GridPane.columnIndex="1"
-                  GridPane.rowIndex="3">
-                <ComboBox fx:id="cboMonth"
-                          prefWidth="160"/>
-                <ComboBox fx:id="cboYear"
-                          prefWidth="80"/>
-            </HBox>
-
-            <!-- Notes -->
-            <Label text="Notes"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="4"
-                   style="-fx-font-weight: bold;"/>
-            <TextArea fx:id="txtNotes"
-                      prefWidth="250"
-                      prefHeight="70"
-                      promptText="Optional notes..."
-                      GridPane.columnIndex="1"
-                      GridPane.rowIndex="4"/>
-
-        </GridPane>
-
-        <!-- Buttons -->
-        <HBox spacing="12"
-              alignment="CENTER"
-              style="-fx-padding: 10 0 0 0;">
-            <Button text="💾  Save and Print Receipt"
-                    onAction="#handleSave"
-                    prefWidth="200"
-                    prefHeight="40"
-                    style="-fx-background-color:
-                           #27AE60;
-                           -fx-text-fill: white;
-                           -fx-font-weight: bold;
-                           -fx-font-size: 13;
-                           -fx-cursor: hand;"/>
-            <Button text="Cancel"
-                    onAction="#handleCancel"
-                    prefWidth="100"
-                    prefHeight="40"
-                    style="-fx-background-color:<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.*?>
-
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.lifesystem.controllers.RecordPaymentController"
-      spacing="0"
-      style="-fx-background-color: #F0F4F8;">
-
-    <!-- Header -->
-    <HBox style="-fx-background-color: #27AE60;
-                 -fx-padding: 14 20;"
-          alignment="CENTER_LEFT">
-        <Label text="💰  Record Payment"
-               style="-fx-font-size: 16;
-                      -fx-font-weight: bold;
-                      -fx-text-fill: white;"/>
-    </HBox>
-
-    <!-- Tenant Info Bar -->
-    <HBox style="-fx-background-color: #EBF5FB;
-                 -fx-padding: 10 20;
-                 -fx-border-color: #AED6F1;
-                 -fx-border-width: 0 0 1 0;">
-        <Label fx:id="lblTenantName"
-               text="Tenant: "
-               style="-fx-font-size: 12;
-                      -fx-font-weight: bold;
-                      -fx-text-fill: #1C4E80;"/>
-    </HBox>
-
-    <!-- Form -->
-    <VBox spacing="14"
-          style="-fx-padding: 20;">
-
-        <GridPane hgap="15" vgap="14">
-
-            <!-- Amount -->
-            <Label text="Amount Paid (UGX) *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="0"
-                   style="-fx-font-weight: bold;"/>
-            <TextField fx:id="txtAmount"
-                       promptText="e.g. 200000"
-                       prefWidth="250"
-                       GridPane.columnIndex="1"
-                       GridPane.rowIndex="0"/>
-
-            <!-- Payment Date -->
-            <Label text="Payment Date *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="1"
-                   style="-fx-font-weight: bold;"/>
-            <DatePicker fx:id="dpPaymentDate"
-                        prefWidth="250"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="1"/>
-
-            <!-- Payment Method -->
-            <Label text="Payment Method *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="2"
-                   style="-fx-font-weight: bold;"/>
-            <ComboBox fx:id="cboMethod"
-                      prefWidth="250"
-                      GridPane.columnIndex="1"
-                      GridPane.rowIndex="2"/>
-
-            <!-- Month -->
-            <Label text="Payment For (Month) *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="3"
-                   style="-fx-font-weight: bold;"/>
-            <HBox spacing="8"
-                  GridPane.columnIndex="1"
-                  GridPane.rowIndex="3">
-                <ComboBox fx:id="cboMonth"
-                          prefWidth="160"/>
-                <ComboBox fx:id="cboYear"
-                          prefWidth="80"/>
-            </HBox>
-
-            <!-- Notes -->
-            <Label text="Notes"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="4"
-                   style="-fx-font-weight: bold;"/>
-            <TextArea fx:id="txtNotes"
-                      prefWidth="250"
-                      prefHeight="70"
-                      promptText="Optional notes..."
-                      GridPane.columnIndex="1"
-                      GridPane.rowIndex="4"/>
-
-        </GridPane>
-
-        <!-- Buttons -->
-        <HBox spacing="12"
-              alignment="CENTER"
-              style="-fx-padding: 10 0 0 0;">
-            <Button text="💾  Save and Print Receipt"
-                    onAction="#handleSave"
-                    prefWidth="200"
-                    prefHeight="40"
-                    style="-fx-background-color:
-                           #27AE60;
-                           -fx-text-fill: white;
-                           -fx-font-weight: bold;
-                           -fx-font-size: 13;
-                           -fx-cursor: hand;"/>
-            <Button text="Cancel"
-                    onAction="#handleCancel"
-                    prefWidth="100"
-                    prefHeight="40"
-                    style="-fx-background-color:
-                           #C0392B;
-                           -fx-text-fill: white;
-                           -fx-font-size: 13;
-                           -fx-cursor: hand;"/>
+    <VBox spacing="12" style="-fx-padding: 20;">
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Amount Paid (UGX):" prefWidth="160" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtAmount" promptText="e.g. 200000" prefWidth="240"/>
         </HBox>
-
-    </VBox>
-
-</VBox><?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.*?>
-
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.lifesystem.controllers.RecordPaymentController"
-      spacing="0"
-      style="-fx-background-color: #F0F4F8;">
-
-    <!-- Header -->
-    <HBox style="-fx-background-color: #27AE60;
-                 -fx-padding: 14 20;"
-          alignment="CENTER_LEFT">
-        <Label text="💰  Record Payment"
-               style="-fx-font-size: 16;
-                      -fx-font-weight: bold;
-                      -fx-text-fill: white;"/>
-    </HBox>
-
-    <!-- Tenant Info Bar -->
-    <HBox style="-fx-background-color: #EBF5FB;
-                 -fx-padding: 10 20;
-                 -fx-border-color: #AED6F1;
-                 -fx-border-width: 0 0 1 0;">
-        <Label fx:id="lblTenantName"
-               text="Tenant: "
-               style="-fx-font-size: 12;
-                      -fx-font-weight: bold;
-                      -fx-text-fill: #1C4E80;"/>
-    </HBox>
-
-    <!-- Form -->
-    <VBox spacing="14"
-          style="-fx-padding: 20;">
-
-        <GridPane hgap="15" vgap="14">
-
-            <!-- Amount -->
-            <Label text="Amount Paid (UGX) *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="0"
-                   style="-fx-font-weight: bold;"/>
-            <TextField fx:id="txtAmount"
-                       promptText="e.g. 200000"
-                       prefWidth="250"
-                       GridPane.columnIndex="1"
-                       GridPane.rowIndex="0"/>
-
-            <!-- Payment Date -->
-            <Label text="Payment Date *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="1"
-                   style="-fx-font-weight: bold;"/>
-            <DatePicker fx:id="dpPaymentDate"
-                        prefWidth="250"
-                        GridPane.columnIndex="1"
-                        GridPane.rowIndex="1"/>
-
-            <!-- Payment Method -->
-            <Label text="Payment Method *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="2"
-                   style="-fx-font-weight: bold;"/>
-            <ComboBox fx:id="cboMethod"
-                      prefWidth="250"
-                      GridPane.columnIndex="1"
-                      GridPane.rowIndex="2"/>
-
-            <!-- Month -->
-            <Label text="Payment For (Month) *"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="3"
-                   style="-fx-font-weight: bold;"/>
-            <HBox spacing="8"
-                  GridPane.columnIndex="1"
-                  GridPane.rowIndex="3">
-                <ComboBox fx:id="cboMonth"
-                          prefWidth="160"/>
-                <ComboBox fx:id="cboYear"
-                          prefWidth="80"/>
-            </HBox>
-
-            <!-- Notes -->
-            <Label text="Notes"
-                   GridPane.columnIndex="0"
-                   GridPane.rowIndex="4"
-                   style="-fx-font-weight: bold;"/>
-            <TextArea fx:id="txtNotes"
-                      prefWidth="250"
-                      prefHeight="70"
-                      promptText="Optional notes..."
-                      GridPane.columnIndex="1"
-                      GridPane.rowIndex="4"/>
-
-        </GridPane>
-
-        <!-- Buttons -->
-        <HBox spacing="12"
-              alignment="CENTER"
-              style="-fx-padding: 10 0 0 0;">
-            <Button text="💾  Save and Print Receipt"
-                    onAction="#handleSave"
-                    prefWidth="200"
-                    prefHeight="40"
-                    style="-fx-background-color:
-                           #27AE60;
-                           -fx-text-fill: white;
-                           -fx-font-weight: bold;
-                           -fx-font-size: 13;
-                           -fx-cursor: hand;"/>
-            <Button text="Cancel"
-                    onAction="#handleCancel"
-                    prefWidth="100"
-                    prefHeight="40"
-                    style="-fx-background-color:
-                           #C0392B;
-                           -fx-text-fill: white;
-                           -fx-font-size: 13;
-                           -fx-cursor: hand;"/>
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Payment Date:" prefWidth="160" style="-fx-font-weight: bold;"/>
+            <DatePicker fx:id="dpPaymentDate" prefWidth="240"/>
         </HBox>
-
-    </VBox>
-
-</VBox>
-                           #C0392B;
-                           -fx-text-fill: white;
-                           -fx-font-size: 13;
-                           -fx-cursor: hand;"/>
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Payment Method:" prefWidth="160" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="cboMethod" prefWidth="240"/>
         </HBox>
-
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Month:" prefWidth="160" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="cboMonth" prefWidth="160"/>
+        </HBox>
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Year:" prefWidth="160" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="cboYear" prefWidth="100"/>
+        </HBox>
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Notes:" prefWidth="160" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="txtNotes" prefWidth="240" prefHeight="70" promptText="Optional notes..."/>
+        </HBox>
+        <HBox spacing="12" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+            <Button text="Save and Print Receipt" onAction="#handleSave"
+                    prefWidth="200" prefHeight="40"
+                    style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            <Button text="Cancel" onAction="#handleCancel"
+                    prefWidth="100" prefHeight="40"
+                    style="-fx-background-color: #C0392B; -fx-text-fill: white; -fx-cursor: hand;"/>
+        </HBox>
     </VBox>
-
 </VBox>

@@ -148,7 +148,8 @@ try {
     stage.setTitle(
         "Receipt — " + receiptNumber);
     stage.setScene(
-        new Scene(root, 580, 720));
+        new Scene(root, 500, 650));
+        stage.setResizable(true);
     stage.initModality(
         Modality.APPLICATION_MODAL);
     stage.showAndWait();

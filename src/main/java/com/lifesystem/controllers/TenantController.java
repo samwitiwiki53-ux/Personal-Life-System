@@ -140,36 +140,43 @@ public class TenantController {
         }
     }
 
-    @FXML
-    private void openRecordPayment() {
-        Tenant selected =
-            tblTenants.getSelectionModel()
-                .getSelectedItem();
-        if (selected == null) {
-            showAlert(
-                "Please select a tenant first.");
-            return;
-        }
-        try {
-            FXMLLoader loader = new FXMLLoader(
-                getClass().getResource(
-                    "/fxml/recordPayment.fxml"));
-            Parent root = loader.load();
-            RecordPaymentController ctrl =
-                loader.getController();
-            ctrl.setTenant(selected);
-            ctrl.setTenantController(this);
-            Stage stage = new Stage();
-            stage.setTitle("Record Payment — " +
-                selected.getFullName());
-            stage.setScene(new Scene(root, 480, 500));
-            stage.initModality(
-                Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+ @FXML
+private void openRecordPayment() {
+    System.out.println("Record payment clicked");
+    Tenant selected =
+        tblTenants.getSelectionModel()
+            .getSelectedItem();
+    System.out.println("Selected tenant: " +
+        (selected == null ? "NONE" :
+            selected.getFullName()));
+
+    if (selected == null) {
+        showAlert(
+            "Please select a tenant first.");
+        return;
     }
+    try {
+        FXMLLoader loader = new FXMLLoader(
+            getClass().getResource(
+                "/fxml/recordPayment.fxml"));
+        Parent root = loader.load();
+        RecordPaymentController ctrl =
+            loader.getController();
+        ctrl.setTenant(selected);
+        ctrl.setTenantController(this);
+        Stage stage = new Stage();
+        stage.setTitle("Record Payment — " +
+            selected.getFullName());
+        stage.setScene(new Scene(root, 480, 500));
+        stage.initModality(
+            Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+    } catch (Exception e) {
+        e.printStackTrace();
+        showAlert("Error opening payment form: "
+            + e.getMessage());
+    }
+}
 
     @FXML
     private void openPaymentHistory() {
